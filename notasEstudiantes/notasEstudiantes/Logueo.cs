@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using notasEstudiantes.Model;
+using notasEstudiantes.VISTA;
 
 namespace notasEstudiantes
 {
@@ -29,13 +30,19 @@ namespace notasEstudiantes
 
                 if (lista.Count() > 0)
                 {
-                    MessageBox.Show("Bienvenido");
+                    frmMenu men = new frmMenu();
+                    men.Show();
                 }
                 else 
                 {
                     MessageBox.Show("Usuario o Contraseña incorrecta");
                 }
             }
+        }
+
+        private void Logueo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

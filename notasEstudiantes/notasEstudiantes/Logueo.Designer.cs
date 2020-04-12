@@ -93,6 +93,7 @@
             this.Name = "Logueo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesión";
+            this.Load += new System.EventHandler(this.Logueo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
