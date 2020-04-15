@@ -32,8 +32,8 @@
             this.lblMateria = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
             this.dtvMateria = new System.Windows.Forms.DataGridView();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtvMateria)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(337, 90);
+            this.btnGuardar.Location = new System.Drawing.Point(337, 55);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 2;
@@ -73,16 +73,6 @@
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Location = new System.Drawing.Point(337, 43);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizar.TabIndex = 5;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
             // dtvMateria
             // 
             this.dtvMateria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -92,13 +82,23 @@
             this.dtvMateria.TabIndex = 6;
             this.dtvMateria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvMateria_CellContentClick);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(337, 93);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 7;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // frmMaterias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(505, 348);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dtvMateria);
-            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblMateria);
@@ -118,7 +118,7 @@
         private System.Windows.Forms.Label lblMateria;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.DataGridView dtvMateria;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

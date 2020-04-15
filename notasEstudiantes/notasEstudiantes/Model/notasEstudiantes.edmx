@@ -27,8 +27,8 @@
             <PropertyRef Name="id_notas" />
           </Key>
           <Property Name="id_notas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_estudiante" Type="int" Nullable="false" />
-          <Property Name="id_materia" Type="int" Nullable="false" />
+          <Property Name="id_usuario" Type="int" />
+          <Property Name="id_materia" Type="int" />
           <Property Name="notas" Type="float" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -41,43 +41,11 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <Association Name="FK__notas__id_estudi__3B75D760">
-          <End Role="estudiante" Type="Self.estudiante" Multiplicity="1" />
-          <End Role="notas" Type="Self.notas" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="estudiante">
-              <PropertyRef Name="id_estudiante" />
-            </Principal>
-            <Dependent Role="notas">
-              <PropertyRef Name="id_estudiante" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__notas__id_materi__3C69FB99">
-          <End Role="materia" Type="Self.materia" Multiplicity="1" />
-          <End Role="notas" Type="Self.notas" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="materia">
-              <PropertyRef Name="id_materia" />
-            </Principal>
-            <Dependent Role="notas">
-              <PropertyRef Name="id_materia" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="notasEstudiantesModelStoreContainer">
           <EntitySet Name="estudiante" EntityType="Self.estudiante" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="materia" EntityType="Self.materia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="notas" EntityType="Self.notas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__notas__id_estudi__3B75D760" Association="Self.FK__notas__id_estudi__3B75D760">
-            <End Role="estudiante" EntitySet="estudiante" />
-            <End Role="notas" EntitySet="notas" />
-          </AssociationSet>
-          <AssociationSet Name="FK__notas__id_materi__3C69FB99" Association="Self.FK__notas__id_materi__3C69FB99">
-            <End Role="materia" EntitySet="materia" />
-            <End Role="notas" EntitySet="notas" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -93,7 +61,6 @@
           <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="notas" Relationship="Self.FK__notas__id_estudi__3B75D760" FromRole="estudiante" ToRole="notas" />
         </EntityType>
         <EntityType Name="materia">
           <Key>
@@ -101,18 +68,15 @@
           </Key>
           <Property Name="id_materia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre_materia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="notas" Relationship="Self.FK__notas__id_materi__3C69FB99" FromRole="materia" ToRole="notas" />
         </EntityType>
         <EntityType Name="notas">
           <Key>
             <PropertyRef Name="id_notas" />
           </Key>
           <Property Name="id_notas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_estudiante" Type="Int32" Nullable="false" />
-          <Property Name="id_materia" Type="Int32" Nullable="false" />
+          <Property Name="id_usuario" Type="Int32" />
+          <Property Name="id_materia" Type="Int32" />
           <Property Name="notas1" Type="Double" />
-          <NavigationProperty Name="estudiante" Relationship="Self.FK__notas__id_estudi__3B75D760" FromRole="notas" ToRole="estudiante" />
-          <NavigationProperty Name="materia" Relationship="Self.FK__notas__id_materi__3C69FB99" FromRole="notas" ToRole="materia" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -124,50 +88,18 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <Association Name="FK__notas__id_estudi__3B75D760">
-          <End Role="estudiante" Type="Self.estudiante" Multiplicity="1" />
-          <End Role="notas" Type="Self.notas" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="estudiante">
-              <PropertyRef Name="id_estudiante" />
-            </Principal>
-            <Dependent Role="notas">
-              <PropertyRef Name="id_estudiante" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__notas__id_materi__3C69FB99">
-          <End Role="materia" Type="Self.materia" Multiplicity="1" />
-          <End Role="notas" Type="Self.notas" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="materia">
-              <PropertyRef Name="id_materia" />
-            </Principal>
-            <Dependent Role="notas">
-              <PropertyRef Name="id_materia" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="notasEstudiantesEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="notasEstudiantesEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="estudiante" EntityType="Self.estudiante" />
           <EntitySet Name="materia" EntityType="Self.materia" />
           <EntitySet Name="notas" EntityType="Self.notas" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-          <AssociationSet Name="FK__notas__id_estudi__3B75D760" Association="Self.FK__notas__id_estudi__3B75D760">
-            <End Role="estudiante" EntitySet="estudiante" />
-            <End Role="notas" EntitySet="notas" />
-          </AssociationSet>
-          <AssociationSet Name="FK__notas__id_materi__3C69FB99" Association="Self.FK__notas__id_materi__3C69FB99">
-            <End Role="materia" EntitySet="materia" />
-            <End Role="notas" EntitySet="notas" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="notasEstudiantesModelStoreContainer" CdmEntityContainer="notasEstudiantesEntities">
+        <EntityContainerMapping StorageEntityContainer="notasEstudiantesModelStoreContainer" CdmEntityContainer="notasEstudiantesEntities1">
           <EntitySetMapping Name="estudiante">
             <EntityTypeMapping TypeName="notasEstudiantesModel.estudiante">
               <MappingFragment StoreEntitySet="estudiante">
@@ -191,7 +123,7 @@
             <EntityTypeMapping TypeName="notasEstudiantesModel.notas">
               <MappingFragment StoreEntitySet="notas">
                 <ScalarProperty Name="id_notas" ColumnName="id_notas" />
-                <ScalarProperty Name="id_estudiante" ColumnName="id_estudiante" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
                 <ScalarProperty Name="id_materia" ColumnName="id_materia" />
                 <ScalarProperty Name="notas1" ColumnName="notas" />
               </MappingFragment>

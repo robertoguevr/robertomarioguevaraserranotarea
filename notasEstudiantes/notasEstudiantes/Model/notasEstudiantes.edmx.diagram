@@ -4,13 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a1b5c2816334465dbfe2bdc984cc2b7a" Name="Diagram1">
-        <EntityTypeShape EntityType="notasEstudiantesModel.estudiante" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="notasEstudiantesModel.materia" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="notasEstudiantesModel.notas" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="notasEstudiantesModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
-        <AssociationConnector Association="notasEstudiantesModel.FK__notas__id_estudi__3B75D760" ManuallyRouted="false" />
-        <AssociationConnector Association="notasEstudiantesModel.FK__notas__id_materi__3C69FB99" ManuallyRouted="false" />
+      <Diagram DiagramId="45966b96932240588049d3dd0d20d102" Name="Diagram1">
+        <EntityTypeShape EntityType="notasEstudiantesModel.estudiante" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="notasEstudiantesModel.materia" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="notasEstudiantesModel.notas" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="notasEstudiantesModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

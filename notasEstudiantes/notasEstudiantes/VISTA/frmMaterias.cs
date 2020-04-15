@@ -22,7 +22,7 @@ namespace notasEstudiantes.VISTA
 
         void cargarDatos() 
         {
-            using (notasEstudiantesEntities db = new notasEstudiantesEntities())
+            using (notasEstudiantesEntities1 db = new notasEstudiantesEntities1())
             {
                 dtvMateria.DataSource = db.materia.ToList();
             }
@@ -35,7 +35,7 @@ namespace notasEstudiantes.VISTA
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            using (notasEstudiantesEntities db = new notasEstudiantesEntities()) 
+            using (notasEstudiantesEntities1 db = new notasEstudiantesEntities1()) 
             {
                 
                 mat.nombre_materia = txtMateria.Text;
@@ -48,7 +48,7 @@ namespace notasEstudiantes.VISTA
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            using (notasEstudiantesEntities db = new notasEstudiantesEntities()) 
+            using (notasEstudiantesEntities1 db = new notasEstudiantesEntities1()) 
             {     
             String Id = dtvMateria.CurrentRow.Cells[0].Value.ToString();
             int IdC = int.Parse(Id);
@@ -67,17 +67,24 @@ namespace notasEstudiantes.VISTA
             txtMateria.Text = Materia;
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            using (notasEstudiantesEntities db = new notasEstudiantesEntities())
-            {
-                dtvMateria.DataSource = db.materia.ToList();
-            }
-        }
-
+       
         private void Materias_Load(object sender, EventArgs e)
         {
             cargarDatos();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            materia mat = new materia();
+            using (notasEstudiantesEntities1 db = new notasEstudiantesEntities1()) 
+            {
+                string Id = dtvMateria.CurrentRow.Cells[0].Value.ToString();
+                mat = db.materia.Find(int.Parse(Id));
+                db.materia.Remove(mat);
+                db.SaveChanges();
+            }
+            cargarDatos();
+            LimpiarDatos();
         }
     }
 }

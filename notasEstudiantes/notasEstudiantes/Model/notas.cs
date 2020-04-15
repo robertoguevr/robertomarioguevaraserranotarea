@@ -15,11 +15,8 @@ namespace notasEstudiantes.Model
     public partial class notas
     {
         public int id_notas { get; set; }
-        public int id_estudiante { get; set; }
-        public int id_materia { get; set; }
+        public Nullable<int> id_usuario { get; set; }
+        public Nullable<int> id_materia { get; set; }
         public Nullable<double> notas1 { get; set; }
-    
-        public virtual estudiante estudiante { get; set; }
-        public virtual materia materia { get; set; }
     }
 }

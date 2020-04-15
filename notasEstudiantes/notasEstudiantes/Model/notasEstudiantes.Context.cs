@@ -13,10 +13,10 @@ namespace notasEstudiantes.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class notasEstudiantesEntities : DbContext
+    public partial class notasEstudiantesEntities1 : DbContext
     {
-        public notasEstudiantesEntities()
-            : base("name=notasEstudiantesEntities")
+        public notasEstudiantesEntities1()
+            : base("name=notasEstudiantesEntities1")
         {
         }
     

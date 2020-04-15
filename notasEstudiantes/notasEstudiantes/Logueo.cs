@@ -21,7 +21,7 @@ namespace notasEstudiantes
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            using (notasEstudiantesEntities db = new notasEstudiantesEntities()) 
+            using (notasEstudiantesEntities1 db = new notasEstudiantesEntities1()) 
             {
                 var lista = from usuario in db.estudiante
                             where usuario.usuario == txtUsuario.Text
@@ -32,6 +32,7 @@ namespace notasEstudiantes
                 {
                     frmMenu men = new frmMenu();
                     men.Show();
+                    this.Hide();
                 }
                 else 
                 {

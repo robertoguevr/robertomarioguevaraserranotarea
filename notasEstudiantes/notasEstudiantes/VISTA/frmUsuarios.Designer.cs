@@ -38,25 +38,27 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.dtvUsuarios = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(45, 273);
+            this.txtUsuario.Location = new System.Drawing.Point(319, 75);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(180, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(113, 20);
             this.txtUsuario.TabIndex = 2;
             // 
             // txtContra
             // 
-            this.txtContra.Location = new System.Drawing.Point(45, 371);
+            this.txtContra.Location = new System.Drawing.Point(455, 75);
             this.txtContra.Name = "txtContra";
-            this.txtContra.Size = new System.Drawing.Size(180, 20);
+            this.txtContra.Size = new System.Drawing.Size(113, 20);
             this.txtContra.TabIndex = 3;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(351, 368);
+            this.btnGuardar.Location = new System.Drawing.Point(132, 142);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 4;
@@ -68,20 +70,20 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(45, 75);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(180, 20);
+            this.txtNombre.Size = new System.Drawing.Size(113, 20);
             this.txtNombre.TabIndex = 5;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(45, 180);
+            this.txtApellido.Location = new System.Drawing.Point(184, 75);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(180, 20);
+            this.txtApellido.Size = new System.Drawing.Size(113, 20);
             this.txtApellido.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 232);
+            this.label1.Location = new System.Drawing.Point(316, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 7;
@@ -90,7 +92,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 333);
+            this.label2.Location = new System.Drawing.Point(452, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 8;
@@ -108,7 +110,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 137);
+            this.label4.Location = new System.Drawing.Point(181, 43);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 10;
@@ -116,7 +118,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(351, 299);
+            this.btnActualizar.Location = new System.Drawing.Point(231, 142);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 12;
@@ -124,11 +126,21 @@
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
+            // dtvUsuarios
+            // 
+            this.dtvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtvUsuarios.Location = new System.Drawing.Point(12, 212);
+            this.dtvUsuarios.Name = "dtvUsuarios";
+            this.dtvUsuarios.Size = new System.Drawing.Size(697, 215);
+            this.dtvUsuarios.TabIndex = 13;
+            this.dtvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvUsuarios_CellContentClick);
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 474);
+            this.ClientSize = new System.Drawing.Size(721, 459);
+            this.Controls.Add(this.dtvUsuarios);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -142,6 +154,7 @@
             this.Name = "frmUsuarios";
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.Usuarios_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtvUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +171,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.DataGridView dtvUsuarios;
     }
 }

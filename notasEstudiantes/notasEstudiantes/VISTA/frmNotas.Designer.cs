@@ -34,15 +34,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.IdNotas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdEstudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtvNotas = new System.Windows.Forms.DataGridView();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnCargar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvNotas)).BeginInit();
             this.SuspendLayout();
             // 
             // txtIdEstudiante
@@ -93,42 +90,19 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Nota";
             // 
-            // dataGridView1
+            // dtvNotas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdNotas,
-            this.IdEstudiante,
-            this.IdMateria,
-            this.Nota});
-            this.dataGridView1.Location = new System.Drawing.Point(105, 179);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(439, 162);
-            this.dataGridView1.TabIndex = 8;
-            // 
-            // IdNotas
-            // 
-            this.IdNotas.HeaderText = "IdNotas";
-            this.IdNotas.Name = "IdNotas";
-            // 
-            // IdEstudiante
-            // 
-            this.IdEstudiante.HeaderText = "IdEstudiante";
-            this.IdEstudiante.Name = "IdEstudiante";
-            // 
-            // IdMateria
-            // 
-            this.IdMateria.HeaderText = "IdMateria";
-            this.IdMateria.Name = "IdMateria";
-            // 
-            // Nota
-            // 
-            this.Nota.HeaderText = "Nota";
-            this.Nota.Name = "Nota";
+            this.dtvNotas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtvNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtvNotas.Location = new System.Drawing.Point(12, 179);
+            this.dtvNotas.Name = "dtvNotas";
+            this.dtvNotas.Size = new System.Drawing.Size(672, 245);
+            this.dtvNotas.TabIndex = 8;
+            this.dtvNotas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvNotas_CellContentClick);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(630, 179);
+            this.btnGuardar.Location = new System.Drawing.Point(690, 179);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 9;
@@ -138,31 +112,44 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(630, 237);
+            this.btnActualizar.Location = new System.Drawing.Point(690, 234);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 10;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(630, 299);
+            this.btnEliminar.Location = new System.Drawing.Point(690, 291);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnCargar
+            // 
+            this.btnCargar.Location = new System.Drawing.Point(690, 86);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(75, 23);
+            this.btnCargar.TabIndex = 12;
+            this.btnCargar.Text = "Cargar";
+            this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
             // frmNotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtvNotas);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -171,7 +158,7 @@
             this.Controls.Add(this.txtIdEstudiante);
             this.Name = "frmNotas";
             this.Text = "frmNotas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvNotas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,13 +171,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdNotas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdEstudiante;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdMateria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nota;
+        private System.Windows.Forms.DataGridView dtvNotas;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnCargar;
     }
 }

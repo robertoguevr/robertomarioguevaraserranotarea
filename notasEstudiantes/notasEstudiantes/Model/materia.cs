@@ -14,16 +14,7 @@ namespace notasEstudiantes.Model
     
     public partial class materia
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public materia()
-        {
-            this.notas = new HashSet<notas>();
-        }
-    
         public int id_materia { get; set; }
         public string nombre_materia { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<notas> notas { get; set; }
     }
 }
