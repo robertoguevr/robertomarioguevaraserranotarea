@@ -75,6 +75,7 @@
             // 
             // dtvMateria
             // 
+            this.dtvMateria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtvMateria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtvMateria.Location = new System.Drawing.Point(39, 186);
             this.dtvMateria.Name = "dtvMateria";

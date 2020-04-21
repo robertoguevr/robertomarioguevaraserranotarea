@@ -30,10 +30,10 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.estudiantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.materiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ingresoDeNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.datosEstudiantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.materiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manteniminetoMateriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ingresoDeNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +58,13 @@
             this.estudiantesToolStripMenuItem.Size = new System.Drawing.Size(137, 20);
             this.estudiantesToolStripMenuItem.Text = "Ingreso de Estudiantes";
             // 
+            // datosEstudiantesToolStripMenuItem
+            // 
+            this.datosEstudiantesToolStripMenuItem.Name = "datosEstudiantesToolStripMenuItem";
+            this.datosEstudiantesToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.datosEstudiantesToolStripMenuItem.Text = "Datos Estudiantes";
+            this.datosEstudiantesToolStripMenuItem.Click += new System.EventHandler(this.datosEstudiantesToolStripMenuItem_Click);
+            // 
             // materiasToolStripMenuItem
             // 
             this.materiasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -65,6 +72,13 @@
             this.materiasToolStripMenuItem.Name = "materiasToolStripMenuItem";
             this.materiasToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.materiasToolStripMenuItem.Text = "Materias";
+            // 
+            // manteniminetoMateriasToolStripMenuItem
+            // 
+            this.manteniminetoMateriasToolStripMenuItem.Name = "manteniminetoMateriasToolStripMenuItem";
+            this.manteniminetoMateriasToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.manteniminetoMateriasToolStripMenuItem.Text = "Mantenimineto Materias";
+            this.manteniminetoMateriasToolStripMenuItem.Click += new System.EventHandler(this.manteniminetoMateriasToolStripMenuItem_Click);
             // 
             // ingresoDeNotasToolStripMenuItem
             // 
@@ -74,24 +88,10 @@
             this.ingresoDeNotasToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
             this.ingresoDeNotasToolStripMenuItem.Text = "Ingreso de Notas";
             // 
-            // datosEstudiantesToolStripMenuItem
-            // 
-            this.datosEstudiantesToolStripMenuItem.Name = "datosEstudiantesToolStripMenuItem";
-            this.datosEstudiantesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.datosEstudiantesToolStripMenuItem.Text = "Datos Estudiantes";
-            this.datosEstudiantesToolStripMenuItem.Click += new System.EventHandler(this.datosEstudiantesToolStripMenuItem_Click);
-            // 
-            // manteniminetoMateriasToolStripMenuItem
-            // 
-            this.manteniminetoMateriasToolStripMenuItem.Name = "manteniminetoMateriasToolStripMenuItem";
-            this.manteniminetoMateriasToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.manteniminetoMateriasToolStripMenuItem.Text = "Mantenimineto Materias";
-            this.manteniminetoMateriasToolStripMenuItem.Click += new System.EventHandler(this.manteniminetoMateriasToolStripMenuItem_Click);
-            // 
             // ingresarNotasToolStripMenuItem
             // 
             this.ingresarNotasToolStripMenuItem.Name = "ingresarNotasToolStripMenuItem";
-            this.ingresarNotasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ingresarNotasToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.ingresarNotasToolStripMenuItem.Text = "Ingresar Notas";
             this.ingresarNotasToolStripMenuItem.Click += new System.EventHandler(this.ingresarNotasToolStripMenuItem_Click);
             // 
@@ -101,6 +101,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.Name = "frmMenu";
             this.Text = "frmMenu";
             this.menuStrip1.ResumeLayout(false);

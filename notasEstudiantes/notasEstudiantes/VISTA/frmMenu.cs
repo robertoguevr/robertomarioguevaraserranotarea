@@ -22,18 +22,21 @@ namespace notasEstudiantes.VISTA
         private void datosEstudiantesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmUsuarios usu = new frmUsuarios();
+            usu.MdiParent = this;
             usu.Show();
         }
 
         private void manteniminetoMateriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmMaterias mat = new frmMaterias();
+            mat.MdiParent = this;
             mat.Show();
         }
 
         private void ingresarNotasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmNotas notas = new frmNotas();
+            notas.MdiParent = this;
             notas.Show();
         }
     }

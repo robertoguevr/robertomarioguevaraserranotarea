@@ -79,7 +79,7 @@ namespace notasEstudiantes.VISTA
                 db.SaveChanges();
             }
             cargardatos();
-            //limpiarDatos();
+            limpiarDatos();
             
         }
         private void Usuarios_Load(object sender, EventArgs e)
